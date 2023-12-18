@@ -1,0 +1,77 @@
+[
+    {
+        "UpdateStageName":"SteamCMD Game Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"SteamCMD",
+        "UpdateSourceData":"2200",
+        "UpdateSourceTarget":"{{$FullRootDir}}client",
+        "ForceDownloadPlatform":"Windows"
+    },
+    {
+        "UpdateStageName":"Client baseq3",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C mkdir quake3-arena\\server\\baseq3\\"
+    },
+    {
+        "UpdateStageName":"Client baseq3",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c '\\mkdir -p ./quake3-arena/server/baseq3/'"
+    },
+    {
+        "UpdateStageName":"Client File Copy",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C xcopy /E /Y /I quake3-arena\\client\\baseq3\\pak0.pk3 quake3-arena\\server\\baseq3\\ && rmdir /Q /S quake3-arena\\client\\"
+    },
+    {
+        "UpdateStageName":"Client File Copy",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c '\\cp -rf ./quake3-arena/client/baseq3/pak0.pk3 ./quake3-arena/server/baseq3/ && rm -rf ./quake3-arena/client/'"
+    },
+    {
+        "UpdateStageName":"Server Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://playmorepromode.com/files/latest/cnq3",
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UnzipUpdateSource":true,
+        "OverwriteExistingFiles":true,
+        "DeleteAfterExtract":true
+    },
+    {
+        "UpdateStageName":"Server Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://playmorepromode.com/files/latest/cpma",
+        "UpdateSourceTarget":"{{$FullBaseDir}}",
+        "UnzipUpdateSource":true,
+        "OverwriteExistingFiles":true,
+        "DeleteAfterExtract":true
+    },
+    {
+        "UpdateStageName":"Server Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://cdn.playmorepromode.com/files/cpma-mappack-full.zip",
+        "UpdateSourceTarget":"{{$FullBaseDir}}baseq3",
+        "UnzipUpdateSource":true,
+        "OverwriteExistingFiles":true,
+        "DeleteAfterExtract":true
+    },
+    {
+        "UpdateStageName":"Server.cfg Download",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"FetchURL",
+        "UpdateSourceData":"https://cdn.playmorepromode.com/files/server.cfg",
+        "UpdateSourceArgs":"server.cfg",
+        "UpdateSourceTarget":"{{$FullBaseDir}}cpma",
+        "OverwriteExistingFiles":false
+    }
+]
