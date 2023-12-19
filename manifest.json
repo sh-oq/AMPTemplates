@@ -1,9 +1,9 @@
 {
-	"id": "ec280171-c67b-4cf8-923f-dc27fea91ee1",
-	"authors": ["CubeCoders Limited", "AMP Community"],
-	"origin": "https://github.com/CubeCoders/AMPTemplates.git",
-	"url": "https://github.com/CubeCoders/AMPTemplates",
+	"id": "83412bef-7c3c-4e2e-ad3f-7b86d4b4fcfa",
+	"authors": ["Shota Hayashi"],
+	"origin": "https://github.com/sh-oq/AMPTemplates.git",
+	"url": "https://github.com/sh-oq/AMPTemplates/tree/dev",
 	"imagefile": "",
 	"prefix": "",
-	"repotype": "AppTemplates"
+	"repotype": "sh-oq"
 }
