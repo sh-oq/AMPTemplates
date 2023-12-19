@@ -4,6 +4,5 @@
 	"origin": "https://github.com/sh-oq/AMPTemplates.git",
 	"url": "https://github.com/sh-oq/AMPTemplates/tree/dev",
 	"imagefile": "",
-	"prefix": "",
-	"repotype": "sh-oq"
+	"prefix": "sh-oq"
 }
